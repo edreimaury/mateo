@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="Mateo & Sarai - Nuestra Boda">
+<meta property="og:description" content="Estás invitado a nuestro gran día 💍✨">
+<meta property="og:image" content="https://monumental-kleicha-9b1c40.netlify.app/boda.jpg">
+<meta property="og:url" content="https://monumental-kleicha-9b1c40.netlify.app/">
+<meta property="og:type" content="website">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mateo & Sarai - Nuestra Boda">
+
+<meta property="article:author" content="Edrei & Lisbey">
+<meta property="article:section" content="Wedding">
+<meta property="article:published_time" content="2026-04-26T10:00:00">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<title>Boda Mateo y Sarai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Playfair Display',serif;
+overflow:hidden;
+color:rgb(7, 7, 7);
+scroll-behavior:smooth;
+}
+
+
+/* FONDO GENERAL */
+
+body{
+margin:0;
+font-family:'Playfair Display',serif;
+overflow:hidden;
+color:rgb(7, 6, 6);
+scroll-behavior:smooth;
+
+background-image:
+linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+url("mmu.jpeg");
+
+background-size:contain;
+background-position:center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+/* DESTELLOS DORADOS */
+
+.destello {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #f8df9b;
+    box-shadow: 0 0 10px 3px #d9ae55;
+    pointer-events: none;
+    animation: brillar 2.5s ease-in-out infinite;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:50px 20px;
+transform:translateY(40px);
+transition:1s ease;
+object-fit:contain;
+
+
+}
+
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+
+.titulo{
+font-family:'Great Vibes',cursive;
+font-size:45px;
+}
+
+.boton{
+background:linear-gradient(45deg,rgba(163, 141, 68, 0.715),rgb(188, 178, 141));
+border:none;
+padding:14px 28px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.encabezado{
+position:absolute;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:rgb(243, 246, 247);
+font-size:14px;
+}
+
+.caja{
+background:rgba(245, 248, 249, 0.9);
+padding:25px;
+border-radius:12px;
+max-width:320px;
+}
+
+.count{
+font-size:26px;
+margin-top:20px;
+}
+
+/* VENTANA EMERGENTE */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgb(230, 242, 242);
+z-index:1000;
+padding:30px;
+color:rgb(5, 8, 9);
+text-align:center;
+background-image:
+url("nm.png");
+}
+
+.cerrar{
+position:absolute;
+right:25px;
+top:15px;
+font-size:28px;
+cursor:pointer;
+}
+
+.sobre-contenedor{
+position:relative;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:20px;
+}
+
+.sobre{
+width:95%;
+max-width:500px;
+}
+
+.boton-sello{
+position:absolute;
+top:58%;
+left:50%;
+transform:translate(-50%,-50%);
+width:80px;
+height:80px;
+border-radius:50%;
+border:none;
+background:transparent;
+cursor:pointer;
+}
+.nombre-animado span{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(20px);
+    animation:letra 0.6s forwards;
+}
+
+@keyframes letra{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- SOBRE -->
+
+<section>
+
+<div class="encabezado">
+
+<span>Mateo y Sarai</span>
+<span>¡Nuestra boda!</span>
+<span> 2026</span>
+</div>
+<h2></h2>
+
+<div class="caja">
+
+<div class="titulo">Boda de</div>
+<div class="titulo">Mateo y Sarai</div>
+
+<div class="sobre-contenedor">
+
+<img src="ftb.png" class="sobre">
+
+<button class="boton-sello" onclick="abrir()">
+Abrir
+</button>
+
+</div>
+
+</section>
+
+<!-- PRESENTACION -->
+
+<section>
+<div class="caja">
+<div class="titulo">---------</div>
+<div class="titulo">Mateo</div>
+<div class="titulo">y</div>
+<h2></h2>
+<div class="titulo">Sarai</div>
+<div class="titulo">---------</div>
+
+<h2>¡Nuestra Boda!</h2>
+
+<p>Te elijo hoy y por el resto de mi vida</p>
+
+</section>
+
+<!-- CUENTA REGRESIVA -->
+
+<section>
+
+<div class="caja">
+
+<h1 class="nombres nombre-animado" data-text="FALTAN"></h1>
+<div class="count" id="contador"></div>
+
+</div>
+
+</section>
+
+<!-- CEREMONIA -->
+
+<section>
+
+<div class="caja">
+
+<h1 class="nombres nombre-animado" data-text="CEREMONIA"></h1>
+
+<h2>--------------------------</h2>
+
+<p>ABRIL</p>
+
+<h3>Domingo 26 · 10:00 A.M.</h3>
+
+<p>2026</p>
+
+<h2>--------------------------</h2>
+
+<p>Iglesia La Luz del Mundo Central de Cochabamba</p>
+
+<button class="boton" onclick="window.open('https://maps.app.goo.gl/6egrQ5Z85uWPSKnC8')">
+¿Cómo llegar?
+</button>
+
+
+</div>
+
+</section>
+
+<!-- CELEBRACION -->
+
+<section>
+
+<div class="caja">
+
+<h1 class="nombres nombre-animado" data-text="CELEBRACIÓN"></h1>
+
+<h2>--------------------------</h2>
+
+<p>ABRIL</p>
+
+<h3>Domingo 26 · 3:00 P.M.</h3>
+
+<p>2026</p>
+
+<h2>--------------------------</h2>
+
+<p id="textoEditable">
+Tocopilla esquina Mejillones
+</p>
+
+<button class="boton" onclick="window.open('https://maps.app.goo.gl/uz41Jv3ByqUkA5Gq7')">
+¿Cómo llegar?
+</button>
+
+
+</div>
+
+</section>
+
+<!-- TIPS -->
+
+<section>
+    
+<div class="caja">
+
+<h1 class="nombres nombre-animado" data-text="NOTAS"></h1>
+
+<p>Información adicional a considerar</p>
+
+<button class="boton" onclick="abrirTips()">
+Ver más
+</button>
+
+</div>
+
+</section>
+
+<!-- REGALOS -->
+
+<section>
+
+<div class="caja">
+
+<h1 class="nombres nombre-animado" data-text="REGALOS"></h1>
+
+<p>Si quieres darnos algo más que tu hermosa presencia...</p>
+
+<button class="boton" onclick="abrirRegalos()">
+Ver más
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section>
+<div class="caja">
+<div class="titulo">Mateo y Sarai</div>
+
+<h2>¡Los esperamos!</h2>
+
+</section>
+
+<!-- MODAL TIPS -->
+<div class="modal" id="tips">
+
+<span class="cerrar" onclick="cerrarTips()">✕</span>
+
+
+<h1>TIPS Y NOTAS</h2>
+
+<p>
+
+<h2>* ¡Por favor ser puntuales!<h1>
+
+<p> 
+
+<p> 
+<h2>* Queremos que disfrutes de esta fiesta al 
+máximo, 
+<p> 
+
+<p> 
+<h2>por eso decidimos que sea un evento
+familiar.
+<p>
+
+<p>
+<h2>* ¡Confirmar asistencia a la brevedad!</h1>
+</p>
+
+<p>
+<h2>* Olvidarse de todo, y ¡¡¡a disfrutar!!!</h1>
+<p>
+
+<button class="boton" onclick="cerrarTips()">
+Atrás
+</button>
+
+</div>
+<style>
+#tips {
+    
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 40px 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  /* Imagen de fondo */
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25)
+    ),
+    url("im.jpeg");
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #0b0a0a;
+}
+</style>
+
+<!-- MODAL REGALOS -->
+<div class="modal" id="regalos">
+
+<span class="cerrar" onclick="cerrarRegalos()">✕</span>
+
+<h1>Regalos</h1>
+
+<p>
+<h2>* Sobre cerrado<h1>
+<p>
+
+<p>
+<p><h2>Para quienes deseen hacer un regalo en<h2></p>
+<p><h2>efectivo, contaremos con sobres disponibles<h2><p>
+<p><h2>para depositar en el cofre. También pueden<h2> <p>
+<p><h2>  contribuir mediante:<h2><p>
+<p>
+
+<p>    
+   <h2> * Depósito bancario:<h2>
+<p>
+
+<p>
+<h2>cuenta: xxxxxxxxxxxx    banco unión</h2>
+
+
+
+<p>
+
+<button class="boton" onclick="cerrarRegalos()">
+Atrás
+</button>
+
+</div>
+<style>
+#regalos {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 40px 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  /* Imagen de fondo */
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25)
+    ),
+    url("im.jpeg");
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #000000;
+}
+</style>
+
+
+<script>
+
+function abrir(){
+document.body.style.overflow="auto"
+window.scrollTo(0,window.innerHeight)
+}
+
+function volver(){
+window.scrollTo(0,0)
+}
+
+const fecha=new Date("April 26, 2026 10:00:00").getTime()
+
+setInterval(()=>{
+
+let ahora=new Date().getTime()
+
+let diff=fecha-ahora
+
+let d=Math.floor(diff/(1000*60*60*24))
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
+let m=Math.floor((diff%(1000*60*60))/(1000*60))
+let s=Math.floor((diff%(1000*60))/1000)
+
+document.getElementById("contador").innerHTML=
+d+" días "+h+"h "+m+"m "+s+"s"
+
+},1000)
+
+function abrirTips(){
+document.getElementById("tips").style.display="block"
+}
+
+function cerrarTips(){
+document.getElementById("tips").style.display="none"
+}
+
+function abrirRegalos(){
+document.getElementById("regalos").style.display="block"
+}
+
+function cerrarRegalos(){
+document.getElementById("regalos").style.display="none"
+}
+
+
+
+/* Animación por página */
+const secciones=document.querySelectorAll("section");
+const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add("visible");
+            animarNombres(e.target);
+        }
+    });
+},{threshold:0.3});
+secciones.forEach(s=>obs.observe(s));
+
+function animarNombres(section){
+    const el=section.querySelector(".nombre-animado");
+    if(!el || el.dataset.animado) return;
+    el.dataset.animado=true;
+    const texto=el.dataset.text;
+    el.innerHTML="";
+    [...texto].forEach((l,i)=>{
+        const span=document.createElement("span");
+        span.textContent=l;
+        span.style.animationDelay=(i*0.08)+"s";
+        el.appendChild(span);
+    });
+}
+
+
+</script>
+
+</body>
+</html>
