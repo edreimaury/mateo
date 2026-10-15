@@ -38,102 +38,120 @@ color:rgb(7, 7, 7);
 scroll-behavior:smooth;
 }
 
-/*caja */
-    .caja {
+/* ===== CONFIGURACIÓN FÁCIL ===== */
+.caja {
+  --negro: #050505;
+  --dorado: #d4af37;
+  --dorado-claro: #ffe8a3;
+
+  /* CAMBIA ESTOS VALORES A TU GUSTO */
+  --grosor-marco: 2px;
+  --grosor-letras: 400;
+  --grosor-detalles: 1px;
+
   width: min(90vw, 390px);
   min-height: 540px;
   margin: 30px auto;
   padding: 12px;
   box-sizing: border-box;
-  color: #f8e7bd;
-  background:
-    radial-gradient(ellipse at 50% 15%,
-      #332416 0%, #15110e 48%, #080808 100%);
-  border: 1px solid #c9a45d;
-  border-radius: 5px;
+
+  background: var(--negro);
+  color: var(--dorado);
+  border: var(--grosor-marco) solid var(--dorado);
+
   box-shadow:
-    0 20px 60px rgba(0,0,0,.45),
-    0 0 25px rgba(202,164,93,.12);
+    0 0 12px rgba(212, 175, 55, .25),
+    0 0 30px rgba(212, 175, 55, .12);
+
   font-family: Georgia, "Times New Roman", serif;
 }
 
 .marco-dorado {
+  position: relative;
   min-height: 510px;
   box-sizing: border-box;
-  border: 1px solid rgba(218,183,111,.65);
   padding: 30px 18px 22px;
   text-align: center;
-  position: relative;
   overflow: hidden;
+
+  background: #050505;
+  border: var(--grosor-marco) solid var(--dorado);
 }
 
+/* ESQUINAS DECORATIVAS */
 .marco-dorado::before,
 .marco-dorado::after {
-  content: "❧";
+  content: "✦";
   position: absolute;
-  color: #c9a45d;
-  font-size: 43px;
-  opacity: .75;
+  color: var(--dorado-claro);
+  font-size: 30px;
+  text-shadow:
+    0 0 5px var(--dorado),
+    0 0 14px rgba(255, 215, 100, .9);
 }
 
 .marco-dorado::before {
-  top: 4px;
+  top: 5px;
   left: 8px;
-  transform: rotate(-35deg);
 }
 
 .marco-dorado::after {
-  bottom: 4px;
+  bottom: 5px;
   right: 8px;
-  transform: rotate(145deg);
 }
 
+/* DETALLES DORADOS */
 .adorno-superior {
-  color: #e3c47f;
-  font-size: 21px;
+  color: var(--dorado);
+  font-size: 23px;
   letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(255, 215, 100, .65);
   margin-bottom: 20px;
 }
 
 .subtitulo {
   font-family: Arial, sans-serif;
   font-size: 10px;
+  font-weight: var(--grosor-letras);
   letter-spacing: 5px;
-  color: #e0c28a;
+  color: var(--dorado-claro);
   margin-bottom: 14px;
 }
 
+/* NOMBRES DE LOS NOVIOS */
 .titulo {
+  color: var(--dorado);
   font-size: clamp(36px, 10vw, 48px);
-  font-weight: normal;
-  line-height: 1.05;
-  color: #f7e5bd;
-  text-shadow: 0 2px 12px rgba(218,183,111,.15);
+  font-weight: var(--grosor-letras);
+  line-height: 1.15;
+  text-shadow: 0 0 12px rgba(212, 175, 55, .25);
 }
 
 .conector {
-  color: #d5ad64;
+  color: var(--dorado-claro);
   font-size: 30px;
+  font-weight: var(--grosor-letras);
   font-style: italic;
   margin: 3px 0;
 }
 
 .linea-dorada {
-  width: 100px;
-  height: 1px;
+  width: 110px;
+  height: var(--grosor-detalles);
   margin: 18px auto 14px;
-  background: linear-gradient(
-    90deg, transparent, #e6c57f, transparent
-  );
+  background: var(--dorado);
+  box-shadow: 0 0 8px rgba(255, 215, 100, .7);
 }
 
 .frase {
-  color: #d5c5a6;
+  color: var(--dorado-claro);
   font-size: 13px;
+  font-weight: var(--grosor-letras);
   font-style: italic;
   margin-bottom: 24px;
 }
 
+/* SOBRE NEGRO CON BORDES DORADOS */
 .sobre-contenedor {
   position: relative;
   width: 210px;
@@ -146,9 +164,9 @@ scroll-behavior:smooth;
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: linear-gradient(145deg, #211a13, #080808);
-  border: 1px solid #bd9954;
-  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  background: #080808;
+  border: var(--grosor-detalles) solid var(--dorado);
+  box-shadow: 0 0 15px rgba(212, 175, 55, .15);
 }
 
 .sobre::before,
@@ -163,7 +181,7 @@ scroll-behavior:smooth;
   background: linear-gradient(
     145deg,
     transparent 49.5%,
-    rgba(202,164,93,.85) 50%,
+    var(--dorado) 50%,
     transparent 50.8%
   );
 }
@@ -172,7 +190,7 @@ scroll-behavior:smooth;
   background: linear-gradient(
     215deg,
     transparent 49.5%,
-    rgba(202,164,93,.7) 50%,
+    var(--dorado) 50%,
     transparent 50.8%
   );
 }
@@ -182,44 +200,54 @@ scroll-behavior:smooth;
   inset: 0 0 auto;
   height: 70px;
   z-index: 2;
-  background: linear-gradient(160deg, #3b2b19, #15100b);
+  background: linear-gradient(160deg, #17130a, #050505);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  border-bottom: 1px solid #d6b36b;
+  border-bottom: var(--grosor-detalles) solid var(--dorado);
 }
 
+/* SELLO DORADO */
 .boton-sello {
   position: absolute;
   z-index: 4;
   left: 50%;
   top: 53%;
   transform: translate(-50%, -50%);
+
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  border: 2px solid #f1d99d;
+  border: 2px solid var(--dorado-claro);
+
   background: radial-gradient(
-    circle at 35% 25%, #f5d991, #bd8c39 58%, #80551e
+    circle at 35% 25%,
+    #ffe8a3,
+    #d4af37 58%,
+    #8c6719
   );
-  color: #211609;
+
+  color: #080808;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+
   box-shadow:
-    0 0 0 4px rgba(195,153,72,.16),
-    0 5px 15px rgba(0,0,0,.5);
+    0 0 0 4px rgba(212, 175, 55, .15),
+    0 0 18px rgba(212, 175, 55, .4);
+
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 3px;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1px;
-  font-weight: bold;
+
   transition: transform .3s, box-shadow .3s;
 }
 
 .boton-sello:hover {
   transform: translate(-50%, -50%) scale(1.07);
-  box-shadow: 0 0 22px rgba(225,187,104,.4);
+  box-shadow: 0 0 25px rgba(255, 215, 100, .7);
 }
 
 .icono-sello {
@@ -227,13 +255,15 @@ scroll-behavior:smooth;
 }
 
 .pie {
-  color: #bda36e;
+  color: var(--dorado);
   font-family: Arial, sans-serif;
   font-size: 9px;
+  font-weight: var(--grosor-letras);
   letter-spacing: 3px;
   margin-top: 12px;
+  text-shadow: 0 0 8px rgba(212, 175, 55, .35);
 }
-    
+
 /* FONDO GENERAL */
 
 body{
