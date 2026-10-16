@@ -354,6 +354,26 @@ cursor:pointer;
 margin-top:15px;
 }
 
+.boton-notas{
+background:linear-gradient(45deg,rgba(163, 141, 68, 0.715),rgb(188, 178, 141));
+border:none;
+padding:14px 28px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.boton-regalo{
+background:linear-gradient(45deg,rgba(163, 141, 68, 0.715),rgb(188, 178, 141));
+border:none;
+padding:14px 28px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
 .encabezado{
 position:absolute;
 top:0;
@@ -426,7 +446,7 @@ max-width:500px;
 
 .boton-sello{
 position:absolute;
-top:60%;
+top:101%;
 left:50%;
 transform:translate(-50%,-50%);
 width:80px;
@@ -467,7 +487,117 @@ cursor:pointer;
     text-align: center;
 }
 
+.imagen-con-texto .count {
+    position: relative;
+    top: -290px;
+    left: -4px
+}
+/* Mover los mensajes */
+.mensaje-ceremonia {
+    position: relative;
+    top: -430px;
+}
 
+
+/* Título CEREMONIA */
+.imagen-con-texto .titulo-ceremonia {
+    position: relative;
+     top: -450px;
+    left: 1px;
+}
+
+/* Título FALTAN */
+.imagen-con-texto .titulo-faltan {
+    position: relative;
+    top: -290px;
+    left: -1px
+}
+
+/* Título CELEBRACIÓN */
+.imagen-con-texto .titulo-celebración {
+    position: relative;
+    top: -450px;
+    left: -1px
+}
+/* Título NOTAS */
+.imagen-con-texto .titulo-notas {
+    position: relative;
+    top: -290px;
+    left: -1px
+}
+
+/* Título REGALOS */
+.imagen-con-texto .titulo-regalos {
+    position: relative;
+    top: -290px;
+    left: -1px
+}
+
+/* Mover el botón */
+.boton-ceremonia {
+    position: relative;
+    top: -410px;
+}
+
+/* Mover el botón */
+.boton-celebración {
+    position: relative;
+    top: -410px;
+}
+/* Mover el botón */
+.boton-notas {
+    position: relative;
+    top: -260px;
+}
+
+/* Mover el botón */
+.boton-regalo {
+    position: relative;
+    top: -280px;
+}
+
+.mensaje-iglesia {
+    position: relative;
+    top: -410px; /* Sube el texto 30 píxeles */
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+.mensaje-celebración {
+    position: relative;
+    top: -410px; /* Sube el texto 30 píxeles */
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.mensaje-notas {
+    position: relative;
+    top: -280px; /* Sube el texto 30 píxeles */
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.mensaje-regalo {
+    position: relative;
+    top: -280px; /* Sube el texto 30 píxeles */
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
 @keyframes letra{
     to{
         opacity:1;
@@ -485,9 +615,9 @@ cursor:pointer;
 <section>
 
  <div class="foto" style="
-        width:370px;
+        width:380px;
         height:390px;
-        top:70px;
+        top:50px;
         left:30px;
         transform:rotate(0deg);
     ">
@@ -496,10 +626,10 @@ cursor:pointer;
             width:100%;
             height:auto;
             position:relative;
-            top:-100px;
+            top:-120px;
         ">
 <button class="boton-sello" onclick="abrir()">
-  <span class="texto-abrir">Abrir</span>
+  <span class="texto-abrir">.</span>
 </button>
 
     </div>
@@ -511,14 +641,14 @@ cursor:pointer;
 
 
 <section>
-    <div class="caja">
-
+   
         <div class="imagen-con-texto">
 
-            <img src="4.png" alt="Imagen decorativa">
+           <img src="4.png" alt="Imagen decorativa"
+      style="width: 387px; height: 400px; position: relative; left: 418px;">
 
 
-                <h1 class="nombres nombre-animado"
+                <h1 class="nombres nombre-animado titulo-faltan"
                     data-text="FALTAN"></h1>
 
                 <div class="count" id="contador"></div>
@@ -534,26 +664,33 @@ cursor:pointer;
 
 <section>
 
-<div class="caja">
-<div class="marco-dorado">
-    <div class="adorno-superior">✦ ❦ ✦</div>
-<h1 class="nombres nombre-animado" data-text="CEREMONIA"></h1>
+<div class="imagen-con-texto">
+    <img src="3.png" alt="Imagen decorativa"
+         style="width: 365px; height: 560px; position: relative; left: 430px;">
 
-<div class="linea-dorada"></div>
+    <h1 class="nombres nombre-animado titulo-ceremonia" data-text="CEREMONIA"></h1>
 
-<p>(mes)</p>
+    <div class="linea-dorada"></div>
 
-<h3>/(día y numero de día) · (hora)</h3>
+    <p class="mensaje-ceremonia">(mes)</p>
 
-<p>2026</p>
+    <h3 class="mensaje-ceremonia">/(día y numero de día) · (hora)</h3>
 
-<div class="linea-dorada"></div>
+    <p class="mensaje-ceremonia">2026</p>
 
-<p>Iglesia La Luz del Mundo Central de Cochabamba</p>
+    <div class="linea-dorada"></div>
 
-<button class="boton" onclick="window.open('https://maps.app.goo.gl/6egrQ5Z85uWPSKnC8')">
-¿Cómo llegar?
-</button>
+    <p class="mensaje-iglesia">
+    Iglesia La Luz del Mundo
+    Central de Cochabamba
+</p>
+    
+    <button class="boton boton-ceremonia"
+        onclick="window.open('https://maps.app.goo.gl/6egrQ5Z85uWPSKnC8')">
+        ¿Cómo llegar?
+    </button>
+</div>
+
 
 
 </div>
@@ -564,28 +701,31 @@ cursor:pointer;
 
 <section>
 
-<div class="caja">
-<div class="marco-dorado">
-    <div class="adorno-superior">✦ ❦ ✦</div>
-<h1 class="nombres nombre-animado" data-text="CELEBRACIÓN"></h1>
+<div class="imagen-con-texto">
+    <img src="3.png" alt="Imagen decorativa"
+         style="width: 365px; height: 560px; position: relative; left: 430px;">
+<h1 class="nombres nombre-animado titulo-celebración" data-text="CELEBRACIÓN"></h1>
 
 <div class="linea-dorada"></div>
+    <p class="mensaje-ceremonia">(mes)</p>
 
-<p>(mes)</p>
+    <h3 class="mensaje-ceremonia">/(día y numero de día) · (hora)</h3>
 
-<h3>(día- numero de dia) · (hora)</h3>
+    <p class="mensaje-ceremonia">2026</p>
 
-<p>2026</p>
+    <div class="linea-dorada"></div>
 
-<div class="linea-dorada"></div>
-
-<p id="textoEditable">
+<p class="mensaje-celebración">
 Tocopilla esquina Mejillones
 </p>
 
-<button class="boton" onclick="window.open('https://maps.app.goo.gl/uz41Jv3ByqUkA5Gq7')">
-¿Cómo llegar?
-</button>
+<div class="linea-dorada"></div>
+
+
+<button class="boton boton-celebración"
+        onclick="window.open('https://maps.app.goo.gl/K4nCq4XqD7DGLf4Z7')">
+        ¿Cómo llegar?
+    </button>
 
 
 </div>
@@ -596,14 +736,15 @@ Tocopilla esquina Mejillones
 
 <section>
     
-<div class="caja">
-<div class="marco-dorado">
-    <div class="adorno-superior">✦ ❦ ✦</div>
-<h1 class="nombres nombre-animado" data-text="NOTAS"></h1>
+<div class="imagen-con-texto">
 
-<p>Información adicional a considerar</p>
+           <img src="4.png" alt="Imagen decorativa"
+      style="width: 387px; height: 400px; position: relative; left: 418px;">
+<h1 class="nombres nombre-animado titulo-notas" data-text="NOTAS"></h1>
+<p class="mensaje-notas">
+Información adicional a considerar</p>
 
-<button class="boton" onclick="abrirTips()">
+<button class="boton-notas" onclick="abrirTips()">
 Ver más
 </button>
 
@@ -615,14 +756,15 @@ Ver más
 
 <section>
 
-<div class="caja">
-<div class="marco-dorado">
-    <div class="adorno-superior">✦ ❦ ✦</div>
-<h1 class="nombres nombre-animado" data-text="REGALOS"></h1>
+<div class="imagen-con-texto">
 
-<p>Si quieres darnos algo más que tu hermosa presencia...</p>
+           <img src="4.png" alt="Imagen decorativa"
+      style="width: 387px; height: 400px; position: relative; left: 418px;">
+<h1 class="nombres nombre-animado titulo-regalos" data-text="REGALOS"></h1>
+<p class="mensaje-regalo">
+Si quieres darnos algo más que tu hermosa presencia...</p>
 
-<button class="boton" onclick="abrirRegalos()">
+<button class="boton-regalo" onclick="abrirRegalos()">
 Ver más
 </button>
 
@@ -864,3 +1006,4 @@ function animarNombres(section){
 
 </body>
 </html>
+
