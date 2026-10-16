@@ -445,17 +445,28 @@ cursor:pointer;
     color: #f5d989;
 }
 
-.imagen-inferior {
+
+.imagen-con-texto {
+    position: relative;
     width: 100%;
-    margin-top: 15px;
-    text-align: center;
 }
 
-.imagen-inferior img {
+.imagen-con-texto > img {
     display: block;
     width: 100%;
     height: auto;
 }
+
+.imagen-con-texto .marco-dorado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    z-index: 2;
+    text-align: center;
+}
+
 
 @keyframes letra{
     to{
@@ -492,24 +503,26 @@ cursor:pointer;
 
 <!-- CUENTA REGRESIVA -->
 
+
 <section>
+    <div class="caja">
 
-<div class="caja">
-<div class="marco-dorado">
-    <div class="adorno-superior">✦ ❦ ✦</div>
-<h1 class="nombres nombre-animado" data-text="FALTAN"></h1>
-<div class="count" id="contador"></div>
+        <div class="imagen-con-texto">
 
-</div>
-   <!-- IMAGEN DEBAJO DE LAS LETRAS -->
-        <div class="imagen-inferior">
-            <img src="4.png" alt="Imagen decorativa">
+            <img src="2.png" alt="Imagen decorativa">
+
+
+                <h1 class="nombres nombre-animado"
+                    data-text="FALTAN"></h1>
+
+                <div class="count" id="contador"></div>
+            </div>
+
         </div>
 
     </div>
-
-
 </section>
+
 
 <!-- CEREMONIA -->
 
